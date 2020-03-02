@@ -1,0 +1,12 @@
+<div>
+    <img [src]="ARTICLE.galerija ? ARTICLE.galerija[0] : '../../assets/placeholder.jpg'"
+        class="image" />
+
+    <div class="d-flex flex-column">
+        <h3>{{ARTICLE.naslov}}</h3>
+        <p>{{ARTICLE.opis}}</p>
+        <p class="mt-auto">Datum: {{ARTICLE.datum | parseDate}}</p>
+        <p class="mt-auto">Autor: {{ARTICLE.autor}}</p>
+        <p class="mt-auto">Broj klikova: {{ARTICLE.brojKlikova}}</p>
+    </div>
+</div>

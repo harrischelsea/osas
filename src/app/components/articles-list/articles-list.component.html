@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="mt-4 col-md-8">
+        <h3>NAJNOVIJI ČLANCI</h3>
+        <hr />
+    </div>
+    <div class="mt-4 col-md-4">
+        <h3>NAJPOPULARNIJI</h3>
+        <hr />
+    </div>
+</div>
+
+<div class="row container-fluid">
+    <div class="col-md-8">
+       <div class="row">
+        <div *ngFor="let item of ARTICLES" class="col-md-6" [routerLink]="['/article', item.id]">
+            <div>
+                <img [src]="item.galerija ? item.galerija[0] : '../../../assets/placeholder.jpg'"
+                    class="image" />
+                <div class="d-flex flex-column">
+                    <h3>{{item.naslov}}</h3>
+                    <p>{{item.opis}}</p>
+                    <p class="mt-auto">Datum: {{item.datum | parseDate}}</p>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    <div class="col-md-4">
+        <div *ngFor="let item of POPULAR; let i = index" class="row">
+            <div class="col-md-3">
+                <h1>0{{i+1}}</h1>
+            </div>
+            <div class="col-md-9">
+                <h3>{{item.naslov}}</h3>
+                <p>{{item.opis}}</p>
+                <div>{{item.brojKlikova}}</div>
+            </div>
+        </div>
+    </div>
+</div>
