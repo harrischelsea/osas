@@ -21,7 +21,7 @@ export class InformationsListComponent implements OnInit {
       this.INFORMATIONS = informations;
       this.MAIN_INFORMATION = informations[0];
       this.SUB_MAIN_INFORMATIONS = [informations[1], informations[2]];
-      this.OTHER_INFORMATIONS = informations.filter((el, i) => i > 2);
+      this.OTHER_INFORMATIONS = informations.filter((el, i) => i > 2 && i < 6);
     })
    }
 

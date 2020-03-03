@@ -6,11 +6,13 @@
 <div class="row container-fluid">
     <div class="col-md-4">
         <div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/410/867/750/vector-forest-sunset-forest-sunset-forest-wallpaper-thumb.jpg"
+            <img 
+                [src]="MAIN_INFORMATION.slika ? MAIN_INFORMATION.slika : '../../../assets/infoplaceholder.jpg'"
                 class="image" />
             <div class="d-flex flex-column">
                 <h3>{{MAIN_INFORMATION.naslov}}</h3>
-                <p>{{MAIN_INFORMATION.opis}}</p>
+                <p>{{MAIN_INFORMATION.opis.slice(0, 60)}}</p>
+                <a *ngIf="MAIN_INFORMATION.dokument" [href]="MAIN_INFORMATION.dokument">Preuzmi</a>
                 <div class="mt-auto">Datum: {{MAIN_INFORMATION.datum | parseDate}}</div>
             </div>
         </div>
@@ -18,24 +20,30 @@
     <div class="col-md-4">
         <div *ngFor="let item of SUB_MAIN_INFORMATIONS" class="row mb-3">
             <div class="col-md-6">
-                <img src="https://c4.wallpaperflare.com/wallpaper/410/867/750/vector-forest-sunset-forest-sunset-forest-wallpaper-thumb.jpg"
-                class="image2" />
+                <img
+                    [src]="item.slika ? item.slika : '../../../assets/infoplaceholder.jpg'"
+                    class="image2" />
             </div>
             <div class="d-flex flex-column col-md-6">
                 <h6>{{item.naslov}}</h6>
-                <div class="mt-auto">Datum: {{MAIN_INFORMATION.datum | parseDate}}</div>
+                <p>{{item.opis.slice(0, 60)}}</p>
+                <a *ngIf="item.dokument" [href]="MAIN_INFORMATION.dokument">Preuzmi</a>
+                <div class="mt-auto">Datum: {{item.datum | parseDate}}</div>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div  *ngFor="let item of OTHER_INFORMATIONS" class="row mb-3">
             <div class="col-md-6">
-                <img src="https://c4.wallpaperflare.com/wallpaper/410/867/750/vector-forest-sunset-forest-sunset-forest-wallpaper-thumb.jpg"
-                class="image3" />
+                <img
+                    [src]="item.slika ? item.slika : '../../../assets/infoplaceholder.jpg'"
+                    class="image3" />
             </div>
             <div class="d-flex flex-column col-md-6">
                 <h6>{{item.naslov}}</h6>
-                <div class="mt-auto">Datum: {{MAIN_INFORMATION.datum | parseDate}}</div>
+                <p>{{item.opis.slice(0, 60)}}</p>
+                <a *ngIf="item.dokument" [href]="MAIN_INFORMATION.dokument">Preuzmi</a>
+                <div class="mt-auto">Datum: {{item.datum | parseDate}}</div>
             </div>
         </div>
     </div>

@@ -25,6 +25,8 @@ import { WelcomeHeaderComponent } from './components/welcome-header/welcome-head
 import { ArticleComponent } from './pages/article/article.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { CreateArticleComponent } from './components/create-article/create-article.component';
+import { CreateInfoComponent } from './components/create-info/create-info.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
     WelcomeHeaderComponent,
     ArticleComponent,
     LoginComponent,
+    CreateArticleComponent,
+    CreateInfoComponent,
   ],
   imports: [
     BrowserModule,

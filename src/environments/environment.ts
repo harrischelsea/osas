@@ -15,6 +15,8 @@ export const environment = {
     appId: "1:1038478609619:web:b4e80173b301679dd85826"
   }
   
+  // deploy angular app cmd
+  // ng build --prod --aot=false --build-optimizer=false --no-progress
 };
 
 
