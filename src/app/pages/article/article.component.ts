@@ -4,6 +4,7 @@ import { Store, select } from '@ngrx/store';
 import * as articleActions from '../../actions/aricles.actions';
 import * as articleSelectors from '../../selectors/articles.selectors';
 import { ArticleService } from '../../services/article.service';
+import { GalleryItem, ImageItem } from '@ngx-gallery/core';
 
 @Component({
   selector: 'app-article',
@@ -12,7 +13,8 @@ import { ArticleService } from '../../services/article.service';
 })
 export class ArticleComponent implements OnInit {
   ARTICLE: articleSelectors.Article = {id: 0, autor: "", galerija: [], naslov: "", opis: "", datum: "", brojKlikova: 0}
-  
+  images: GalleryItem[] = [];
+
   constructor(
     private router:ActivatedRoute, 
     private store:Store<any>,
@@ -22,6 +24,16 @@ export class ArticleComponent implements OnInit {
       const { article } = values;
       if (!article) return;
       this.ARTICLE = article;
+
+      if (!article.galerija) return;
+      article.galerija.map(element => {
+        this.images = [
+          ...this.images,
+          new ImageItem({ src: element, thumb: element })
+        ];
+      });
+      
+
     })
    }
 

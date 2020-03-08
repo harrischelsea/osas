@@ -27,6 +27,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { CreateArticleComponent } from './components/create-article/create-article.component';
 import { CreateInfoComponent } from './components/create-info/create-info.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { GalleryModule } from '@ngx-gallery/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { CreateInfoComponent } from './components/create-info/create-info.compon
     FormsModule,
     ReactiveFormsModule,
 
+    GalleryModule,
+    BrowserAnimationsModule,
+
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
@@ -66,7 +72,9 @@ import { CreateInfoComponent } from './components/create-info/create-info.compon
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot(effectsArr),
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

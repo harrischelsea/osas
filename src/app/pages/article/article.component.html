@@ -1,6 +1,8 @@
 <div>
-    <img [src]="ARTICLE.galerija ? ARTICLE.galerija[0] : '../../assets/placeholder.jpg'"
-        class="image" />
+    <!-- <img [src]="ARTICLE.galerija ? ARTICLE.galerija[0] : '../../assets/placeholder.jpg'"
+        class="image" /> -->
+
+        <gallery *ngIf="images.length > 0" [items]="images"></gallery>
 
     <div class="d-flex flex-column">
         <h3>{{ARTICLE.naslov}}</h3>
