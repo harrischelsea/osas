@@ -36,4 +36,8 @@ export class ArticleService {
     return this.db.collection('obavjestenja').valueChanges();
   }
 
+  GetDocsAndRules() {
+    return this.db.collection('dokumenti').valueChanges();
+  }
+
 }

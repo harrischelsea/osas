@@ -3,8 +3,8 @@
     <hr />
 </div>
 
-<div class="row container-fluid">
-    <div class="col-md-4">
+<div class="row container-fluid mb-3">
+    <!-- <div class="col-md-4">
         <div>
             <img 
                 [src]="MAIN_INFORMATION.slika ? MAIN_INFORMATION.slika : '../../../assets/infoplaceholder.jpg'"
@@ -16,23 +16,26 @@
                 <div class="mt-auto">Datum: {{MAIN_INFORMATION.datum | parseDate}}</div>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div *ngFor="let item of SUB_MAIN_INFORMATIONS" class="row mb-3">
-            <div class="col-md-6">
+    </div> -->
+    <div class="d-flex d-row flex-wrap row">
+        <div *ngFor="let item of INFORMATIONS"
+            class="col-md-4">
+            <!-- <div class="col-md-6">
                 <img
                     [src]="item.slika ? item.slika : '../../../assets/infoplaceholder.jpg'"
                     class="image2" />
-            </div>
-            <div class="d-flex flex-column col-md-6">
+            </div> -->
+            <div class="d-flex flex-column information">
                 <h6>{{item.naslov}}</h6>
                 <p>{{item.opis.slice(0, 60)}}</p>
-                <a *ngIf="item.dokument" [href]="MAIN_INFORMATION.dokument">Preuzmi</a>
-                <div class="mt-auto">Datum: {{item.datum | parseDate}}</div>
+                <div class="mt-auto">
+                    <a *ngIf="item.dokument" [href]="MAIN_INFORMATION.dokument">Preuzmi</a>
+                    <div>Datum: {{item.datum | parseDate}}</div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <!-- <div class="col-md-4">
         <div  *ngFor="let item of OTHER_INFORMATIONS" class="row mb-3">
             <div class="col-md-6">
                 <img
@@ -46,5 +49,5 @@
                 <div class="mt-auto">Datum: {{item.datum | parseDate}}</div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

@@ -33,6 +33,7 @@ export class CreateArticleComponent implements OnInit {
       id: uuid,
       autor: "administrator",
       naslov: form.value.naslov,
+      kratkiOpis: form.value.kratkiOpis,
       opis: form.value.opis,
       datum: moment().toISOString(),
       brojKlikova: 0,

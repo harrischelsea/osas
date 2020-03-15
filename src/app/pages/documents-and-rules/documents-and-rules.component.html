@@ -1,0 +1,20 @@
+<div>
+        <h3>Dokumenti i pravilnici</h3>
+        <hr />
+    </div>
+    
+    <div class="row container-fluid mb-3">
+        <div class="d-flex d-row flex-wrap row">
+            <div *ngFor="let item of INFORMATIONS"
+                class="col-md-4">
+                <div class="d-flex flex-column information">
+                    <h6>{{item.naslov}}</h6>
+                    <p>{{item.opis.slice(0, 60)}}</p>
+                    <div class="mt-auto">
+                        <a *ngIf="item.dokument" [href]="MAIN_INFORMATION.dokument">Preuzmi</a>
+                        <div>Datum: {{item.datum | parseDate}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

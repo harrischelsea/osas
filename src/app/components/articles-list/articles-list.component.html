@@ -1,39 +1,31 @@
-<div class="row">
-    <div class="mt-4 col-md-8">
-        <h3>NAJNOVIJI ČLANCI</h3>
-        <hr />
-    </div>
-    <div class="mt-4 col-md-4">
-        <h3>NAJPOPULARNIJI</h3>
-        <hr />
-    </div>
-</div>
-
 <div class="row container-fluid">
     <div class="col-md-8">
+        <h3>NAJNOVIJI ČLANCI</h3>
+        <hr />
        <div class="row">
-        <div *ngFor="let item of ARTICLES" class="col-md-6" [routerLink]="['/article', item.id]">
-            <div>
+        <div *ngFor="let item of ARTICLES" class="col-md-6 article" [routerLink]="['/article', item.id]">
+            <div class="d-flex flex-column" style="min-height: 400px;">
                 <img [src]="item.galerija ? item.galerija[0] : '../../../assets/placeholder.jpg'"
-                    class="image" />
-                <div class="d-flex flex-column">
+                    class="image mb-3" />
+                <div class="d-flex flex-column" style="flex: 1">
                     <h3>{{item.naslov}}</h3>
-                    <p>{{item.opis}}</p>
-                    <p class="mt-auto">Datum: {{item.datum | parseDate}}</p>
+                    <p>{{item.kratkiOpis}}</p>
+                    <p class="mt-auto date">Datum: {{item.datum | parseDate}}</p>
                 </div>
             </div>
         </div>
        </div>
     </div>
     <div class="col-md-4">
+        <h3>NAJPOPULARNIJI</h3>
+        <hr />
         <div *ngFor="let item of POPULAR; let i = index" class="row">
             <div class="col-md-3">
                 <h1>0{{i+1}}</h1>
             </div>
             <div class="col-md-9">
                 <h3>{{item.naslov}}</h3>
-                <p>{{item.opis}}</p>
-                <div>{{item.brojKlikova}}</div>
+                <div>Broj pregleda: {{item.brojKlikova}}</div>
             </div>
         </div>
     </div>

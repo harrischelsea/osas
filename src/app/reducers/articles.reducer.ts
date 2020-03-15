@@ -12,6 +12,10 @@ const initialState = {
     informations: null,
     informationsLoading: false,
     informationsErr: null,
+
+    docsAndRules: null,
+    docsAndRulesLoading: false,
+    docsAndRulesErr:null,
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -37,6 +41,13 @@ export default (state = initialState, { type, payload }) => {
         return { ...state, informationsLoading: false, informationsErr: null, informations: payload }
     case ArticlesActionTypes.GET_ALL_INFORMATIONS_FAILED:
         return { ...state, informationsLoading: false, informationsErr: payload, informations: null }
+
+    case ArticlesActionTypes.GET_ALL_DOCS_AND_RULES_STARTED:
+        return { ...state, docsAndRulesLoading: true, docsAndRulesErr: null, docsAndRules: null }
+    case ArticlesActionTypes.GET_ALL_DOCS_AND_RULES_SUCCESS:
+        return { ...state, docsAndRulesLoading: false, docsAndRulesErr: null, docsAndRules: payload }
+    case ArticlesActionTypes.GET_ALL_DOCS_AND_RULES_FAILED:
+        return { ...state, docsAndRulesLoading: false, docsAndRulesErr: payload, docsAndRules: null }
 
     default:
         return state

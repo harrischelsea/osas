@@ -28,6 +28,10 @@ interface ArticleReducer {
     informations: Information[],
     informationsLoading: boolean,
     informationsErr: any;
+
+    docsAndRules: Information[],
+    docsAndRulesLoading: boolean,
+    docsAndRulesErr: any;
 }
  
 interface AppState {

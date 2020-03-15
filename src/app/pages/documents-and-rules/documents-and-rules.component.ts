@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import * as articleSelectors from '../../selectors/articles.selectors';
 import { Information } from '../../selectors/articles.selectors';
+import * as articlesActions from '../../actions/aricles.actions';
 
 @Component({
-  selector: 'app-informations-list',
-  templateUrl: './informations-list.component.html',
-  styleUrls: ['./informations-list.component.scss']
+  selector: 'app-documents-and-rules',
+  templateUrl: './documents-and-rules.component.html',
+  styleUrls: ['./documents-and-rules.component.scss']
 })
-export class InformationsListComponent implements OnInit {
+export class DocumentsAndRulesComponent implements OnInit {
   INFORMATIONS: Information[] = [];
   MAIN_INFORMATION: Information = {id: 0,  link: "", naslov: "", opis: "", datum: ""}
   SUB_MAIN_INFORMATIONS: Information[] = [];
@@ -27,6 +28,7 @@ export class InformationsListComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.store.dispatch(new articlesActions.GetAllInformationsStarted());
   }
 
 }

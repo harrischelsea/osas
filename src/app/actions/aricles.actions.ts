@@ -42,3 +42,15 @@ export class GetAllInformationsFailed implements ActionParrent {
     type = ArticlesActionTypes.GET_ALL_INFORMATIONS_FAILED;
     constructor(public payload: any){}
 }
+
+export class GetAllDocsAndRulesStarted implements Action {
+    type = ArticlesActionTypes.GET_ALL_DOCS_AND_RULES_STARTED;
+}
+export class GetAllDocsAndRulesSuccess implements ActionParrent {
+    type = ArticlesActionTypes.GET_ALL_DOCS_AND_RULES_SUCCESS;
+    constructor(public payload: any){}
+}
+export class GetAllDocsAndRulesFailed implements ActionParrent {
+    type = ArticlesActionTypes.GET_ALL_DOCS_AND_RULES_FAILED;
+    constructor(public payload: any){}
+}

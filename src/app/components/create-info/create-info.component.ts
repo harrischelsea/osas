@@ -38,7 +38,7 @@ export class CreateInfoComponent implements OnInit {
       opis: form.value.opis,
       datum: moment().toISOString(),
       brojKlikova: 0,
-      slika: this.imageUrl,
+      // slika: this.imageUrl,
       dokument: this.documentUrl,
   })
   .then(function() {

@@ -7,9 +7,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { 
   AuthGuard
 } from './guards/auth.guard';
+import { DocumentsAndRulesComponent } from './pages/documents-and-rules/documents-and-rules.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent },
+  {path: "dokumenti", component: DocumentsAndRulesComponent },
   {path: "article/:id", component: ArticleComponent },
   {path: "admin", component: AdministratorComponent, canActivate: [AuthGuard] },
 

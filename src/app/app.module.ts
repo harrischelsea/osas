@@ -29,7 +29,10 @@ import { CreateArticleComponent } from './components/create-article/create-artic
 import { CreateInfoComponent } from './components/create-info/create-info.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { GalleryModule } from '@ngx-gallery/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './components/footer/footer.component';
+import { DocumentsAndRulesComponent } from './pages/documents-and-rules/documents-and-rules.component'; 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -46,10 +49,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     CreateArticleComponent,
     CreateInfoComponent,
+    FooterComponent,
+    DocumentsAndRulesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
 
     FormsModule,
     ReactiveFormsModule,
