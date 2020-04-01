@@ -22,6 +22,7 @@ export class ArticleComponent implements OnInit {
     ) {
     this.store.pipe(select(articleSelectors.articleByIdSelector)).subscribe(values => {
       const { article } = values;
+      this.images = [];
       if (!article) return;
       this.ARTICLE = article;
 

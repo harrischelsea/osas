@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as articleSelectors from '../../selectors/articles.selectors';
 import { Article } from '../../selectors/articles.selectors';
 import { Store, select } from '@ngrx/store';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-articles-list',

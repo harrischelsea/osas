@@ -18,6 +18,8 @@ export class CreateArticleComponent implements OnInit {
   downloadURL: Observable<string | null>;
   imageUrls:  string[] = [];
 
+  editorContent: string = "";
+
   constructor(private db: AngularFirestore, private storage: AngularFireStorage) { }
 
   ngOnInit() {
@@ -28,8 +30,9 @@ export class CreateArticleComponent implements OnInit {
 
     console.log('form', form.value);
     console.log('imageUrls', this.imageUrls);
+    console.log('ddddd', this.editorContent);
 
-    this.db.collection("clanci").doc(uuid).set({
+    const postObj = {
       id: uuid,
       autor: "administrator",
       naslov: form.value.naslov,
@@ -38,7 +41,8 @@ export class CreateArticleComponent implements OnInit {
       datum: moment().toISOString(),
       brojKlikova: 0,
       galerija: this.imageUrls
-  })
+    }
+    this.db.collection("clanci").doc(uuid).set(postObj)
   .then(function() {
       console.log("Document successfully written!");
   })

@@ -33,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
 import { DocumentsAndRulesComponent } from './pages/documents-and-rules/documents-and-rules.component'; 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     NgbModule,
 
+    EditorModule,
     FormsModule,
     ReactiveFormsModule,
 

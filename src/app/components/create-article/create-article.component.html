@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
             <label for="opis">Opis</label>
-            <textarea
+            <!-- <textarea
                 ngModel
                 type="text"
                 class="form-control"
@@ -32,7 +32,27 @@
                 rows="5"
                 placeholder="Upišite opis"
                 required>
-            </textarea>
+            </textarea> -->
+            <editor
+                apiKey="y5ywymgspu20xip885s971dj836exwf09rvdnq2mn6sn7o7q"
+                [initialValue]="editorContent"
+                ngModel
+                name="opis"
+                [init]="{
+                    height: 500,
+                    menubar: true,
+                    plugins: [
+                      'advlist autolink lists link image charmap print preview anchor',
+                      'searchreplace visualblocks code fullscreen',
+                      'insertdatetime media table paste code help wordcount'
+                    ],
+                    toolbar:
+                      'undo redo image | formatselect | bold italic backcolor | \
+                      alignleft aligncenter alignright alignjustify | \
+                      bullist numlist outdent indent | removeformat | help'
+                 
+                    }"
+            ></editor>
         </div>
         <div class="form-group">
             <label for="file">Slike</label>
