@@ -19,7 +19,8 @@ export class DocumentsAndRulesComponent implements OnInit {
     this.store.pipe(select(articleSelectors.informationsSelector)).subscribe(values => {
       const { informations } = values;
       if(!informations) return;
-      this.INFORMATIONS = informations.slice(0, 9);
+      // this.INFORMATIONS = informations.slice(0, 9);
+      this.INFORMATIONS = informations;
       this.INFORMATIONS = this.INFORMATIONS.sort((a, b) => (a.datum > b.datum) ? 1 : -1);
       this.MAIN_INFORMATION = informations[0];
       this.SUB_MAIN_INFORMATIONS = [informations[1], informations[2]];
