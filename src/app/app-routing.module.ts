@@ -8,11 +8,13 @@ import {
   AuthGuard
 } from './guards/auth.guard';
 import { DocumentsAndRulesComponent } from './pages/documents-and-rules/documents-and-rules.component';
+import { PublicProcurementComponent } from './pages/public-procurement/public-procurement.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent },
   {path: "dokumenti", component: DocumentsAndRulesComponent },
   {path: "article/:id", component: ArticleComponent },
+  {path: "javne-nabavke", component: PublicProcurementComponent },
   {path: "admin", component: AdministratorComponent, canActivate: [AuthGuard] },
 
   {path: "login", component: LoginComponent},

@@ -34,6 +34,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DocumentsAndRulesComponent } from './pages/documents-and-rules/documents-and-rules.component'; 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { PublicProcurementComponent } from './pages/public-procurement/public-procurement.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     CreateInfoComponent,
     FooterComponent,
     DocumentsAndRulesComponent,
+    PublicProcurementComponent,
   ],
   imports: [
     BrowserModule,

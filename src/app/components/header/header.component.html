@@ -10,7 +10,10 @@
       </li>
       <li class="nav-item active">
           <a (click)="isCollapsed = !isCollapsed" class="nav-link" routerLink="dokumenti" routerLinkActive="router-link-active">Dokumenti i pravilnici<span class="sr-only">(current)</span></a>
-        </li>
+      </li>
+      <li class="nav-item active">
+        <a (click)="isCollapsed = !isCollapsed" class="nav-link" routerLink="javne-nabavke" routerLinkActive="router-link-active">Javne nabavke<span class="sr-only">(current)</span></a>
+      </li>
       <li *ngIf="isAutheticated()" class="nav-item active">
           <a (click)="isCollapsed = !isCollapsed" class="nav-link" [routerLink]="['/admin']" routerLinkActive="router-link-active">Administrator <span class="sr-only">(current)</span></a>
       </li>
